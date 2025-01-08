@@ -29,6 +29,12 @@ import { CounterEffect } from './Hooks/CounterEffect';
 import { FetchDataEffect } from './Hooks/FetchDataEffect';
 import Switcher from './Hooks/Switcher';
 import ComponentA from './PropDrilling/ComponentA';
+import { useContext } from 'react';
+import {UserProvider} from './PropDrilling/UserContext'
+import UserProfile from './PropDrilling/UserProfile'
+import UpdateUser from './PropDrilling/UpdateUser';
+
+
 export const Data = createContext();
 export const AnotherData = createContext();
 function App() {
@@ -47,11 +53,16 @@ function App() {
       {/* <CounterEffect/> */}
       {/* <Switcher/> */}
       {/* <FetchDataEffect/> */}
-      <AnotherData.Provider value={age}>
-      <Data.Provider value={name}>
-        <ComponentA />
-      </Data.Provider>
-      </AnotherData.Provider>
+      {/* <AnotherData.Provider value={age}>
+        <Data.Provider value={name}>
+          <ComponentA />
+        </Data.Provider>
+      </AnotherData.Provider> */}
+      {/* <UserProfile/> */}
+      <UserProvider>
+        <UpdateUser/>
+        <UserProfile/>
+      </UserProvider>
     </>
   )
 }
