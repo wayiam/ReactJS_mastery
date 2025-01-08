@@ -29,19 +29,6 @@ import { CounterEffect } from './Hooks/CounterEffect';
 import { FetchDataEffect } from './Hooks/FetchDataEffect';
 import Switcher from './Hooks/Switcher';
 import ComponentA from './PropDrilling/ComponentA';
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const Data = createContext();
 export const AnotherData = createContext();
 function App() {
@@ -59,12 +46,12 @@ function App() {
       {/* <BasicEffect/> */}
       {/* <CounterEffect/> */}
       {/* <Switcher/> */}
-      <FetchDataEffect/>
-      {/* <AnotherData.Provider value={age}>
+      {/* <FetchDataEffect/> */}
+      <AnotherData.Provider value={age}>
       <Data.Provider value={name}>
         <ComponentA />
       </Data.Provider>
-      </AnotherData.Provider> */}
+      </AnotherData.Provider>
     </>
   )
 }
